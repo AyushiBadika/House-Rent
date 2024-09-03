@@ -22,7 +22,9 @@ export default function App() {
   }, [liked]);
 
   useEffect(() => {
-    setLiked(JSON.parse(localStorage.getItem("likedHouse")));
+    if (localStorage.getItem("likedHouse") !== null) {
+      setLiked(JSON.parse(localStorage.getItem("likedHouse")));
+    }
   }, []);
 
   return (
