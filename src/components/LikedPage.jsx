@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import data from "../../data";
 import { Link } from "react-router-dom";
 
-export default function LikedPage({ liked, handleLike }) {
+export default function LikedPage({ liked }) {
   const likedData = data.filter((data, index) => {
     if (liked?.includes(index)) return data;
   });
@@ -25,7 +25,6 @@ export default function LikedPage({ liked, handleLike }) {
                 <div className="px-2 py-1 w-full">
                   <div className="flex w-full justify-between items-center ">
                     <p className=" w-3/4 content-center grow text-blue-600 text-lg font-bold">₹ {data.price}/day</p>
-                    <div onClick={() => handleLike(index)}>{liked?.includes(index) ? <FaHeart color="red" /> : <FaRegHeart />}</div>
                   </div>
                   <p className="text-xl font-semibold  mt-2">{data.name}</p>
                   <p className="mb-4 mt-2 text-gray-500">
